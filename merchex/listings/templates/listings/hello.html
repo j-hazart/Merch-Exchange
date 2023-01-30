@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'listings/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-</head>
+{% block content %}
 
-<body>
-    <h1>Hello django</h1>
-    <p>J'ai {{bands|length}} groupes préférés :</p>
-    <ul>
-        {%for band in bands%}
-        <li>{{band.name|upper}}</li>
-        {%endfor%}
-    </ul>
-    <p>
-        Ca fait
-        {% if bands|length < 5 %} peu de {% elif bands|length < 10 %} quelques {% else %} beaucoup de {% endif %}
-            groupes préférés. </p>
-</body>
+<h1>Hello django</h1>
+<p>J'ai {{bands|length}} groupes préférés :</p>
+<ul>
+    {%for band in bands%}
+    <li>{{band.name|upper}}</li>
+    {%endfor%}
+</ul>
+<p>
+    Ca fait
+    {% if bands|length < 5 %} peu de {% elif bands|length < 10 %} quelques {% else %} beaucoup de {% endif %} groupes
+        préférés. </p>
 
-</html>
+        {% endblock %}
